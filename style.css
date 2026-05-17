@@ -33,7 +33,6 @@ body {
     padding: 2.5rem;
     border-radius: 8px;
     border: 1px solid #333;
-    /* This makes the glass effect */
     backdrop-filter: blur(10px);
     transition: opacity 0.8s ease;
     width: 85%;
@@ -78,7 +77,6 @@ button:active, button:hover {
     pointer-events: none;
 }
 
-/* Fixes for mobile devices */
 @media (max-width: 600px) {
     .ui-layer {
         padding: 1.5rem;
