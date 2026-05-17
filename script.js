@@ -2,6 +2,7 @@ const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 const ui = document.getElementById('ui');
 const btn = document.getElementById('decryptBtn');
+const music = document.getElementById('bgMusic'); // Connects to audio element
 
 let width, height;
 let particles = [];
@@ -70,6 +71,13 @@ function createParticles() {
 function startAction() {
     if (decrypted) return;
     ui.classList.add('hidden');
+    
+    // Play music immediately upon button press
+    if (music) {
+        music.play().catch(error => {
+            console.log("Audio play blocked or failed:", error);
+        });
+    }
     
     for (let i = 0; i < particleCount; i++) {
         const t = (i / particleCount) * Math.PI * 2;
